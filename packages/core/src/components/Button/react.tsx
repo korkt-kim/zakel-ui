@@ -1,0 +1,44 @@
+import { StyledProps, PseudoProps } from "@zakel-ui/system";
+import React, { ReactNode } from "react";
+import {
+  As,
+  ComponentWithAs,
+  MergeWithAs,
+  PropsOf,
+  ComponentProps,
+} from "../types";
+import { Box } from "../Box";
+import { theme } from "@zakel-ui/sheet";
+import { defaultButtonTag } from "./handler";
+import { forwardRef } from "../forwardRef";
+
+type ButtonProps = ComponentProps<"Button">;
+
+type ButtonComponent<T extends As = "button"> = ComponentWithAs<T, ButtonProps>;
+
+/**
+ * Button is a clickable component used to trigger actions or events in a Zakel UI application.
+ *
+ * @see — http://zakel-ui.com/docs/Components/Button
+ */
+const Button: ButtonComponent = forwardRef(
+  ({ as: Component = defaultButtonTag, children, ...props }, ref) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- FIXME
+    const variant = props.variant
+      ? theme.getVariants("Button")?.variants?.[props.variant]
+      : {};
+
+    return (
+      <Box
+        as={Component}
+        ref={ref}
+        {...variant}
+        {...props}
+        children={children}
+        IS_ZAKEL_DEFAULT={false}
+      />
+    );
+  },
+);
+
+export { Button, type ButtonComponent, ButtonProps };

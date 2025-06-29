@@ -1,0 +1,48 @@
+{
+  "name": "@zakel-ui/webpack-plugin",
+  "version": "1.4.3",
+  "description": "🐻 Zakel UI is a utility-first, zero-runtime CSS-in-JS library that offers an outstanding developer experience and optimized performance.",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "css-in-js",
+    "zero-runtime",
+    "front-end",
+    "design-system",
+    "styled-components"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "assets"
+  ],
+  "scripts": {
+    "build": "tsup --config ../../tsup.config.ts",
+    "typecheck": "tsc --noEmit --composite false",
+    "lint": "eslint './src/**/*.{js,ts,jsx,tsx}' --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint --fix './src/**/*.{js,ts,jsx,tsx}' --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "@zakel-ui/compiler": "workspace:^",
+    "@zakel-ui/sheet": "workspace:^",
+    "@zakel-ui/system": "workspace:^",
+    "esbuild": "^0.18.0",
+    "eval": "^0.1.8"
+  },
+  "devDependencies": {
+    "webpack": "^5.78.0"
+  },
+  "peerDependencies": {
+    "webpack": "^5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "@zakel-ui/vite",
+  "version": "1.4.0",
+  "description": "Zakel UI is a utility-first, zero-runtime CSS-in-JS library that offers an outstanding developer experience and optimized performance.",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "css-in-js",
+    "zero-runtime",
+    "front-end",
+    "design-system",
+    "styled-components"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup --config ../../tsup.config.ts",
+    "typecheck": "tsc --noEmit --composite false",
+    "lint": "eslint './src/**/*.{js,ts,jsx,tsx}' --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint --fix './src/**/*.{js,ts,jsx,tsx}' --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "@zakel-ui/system": "workspace:^",
+    "@zakel-ui/sheet": "workspace:^",
+    "@zakel-ui/compiler": "workspace:^",
+    "esbuild": "^0.18.0",
+    "eval": "^0.1.8"
+  },
+  "devDependencies": {
+    "vite": "^4.2.1"
+  },
+  "peerDependencies": {
+    "vite": "^4 || ^5 || ^6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
