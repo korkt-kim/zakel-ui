@@ -1,0 +1,18 @@
+import { StyledProps } from "@zakel-ui/system";
+
+export const defaultInputTag = "input";
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type InputSpecificProps = {};
+
+const inputSpecificProps: (keyof InputSpecificProps)[] = [];
+
+export const isInputProps = (
+  propName: unknown,
+): propName is InputSpecificProps => {
+  return inputSpecificProps.some((k) => k === propName);
+};
+
+export const inputDefaultProps: StyledProps = {};
+
+export const inputHandler = (props: InputSpecificProps) => ({});

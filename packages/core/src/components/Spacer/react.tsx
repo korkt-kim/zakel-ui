@@ -1,0 +1,54 @@
+import { StyledProps, PseudoProps } from "@zakel-ui/system";
+import React, { ReactNode } from "react";
+import {
+  As,
+  ComponentWithAs,
+  MergeWithAs,
+  PropsOf,
+  ComponentProps,
+} from "../types";
+import { Box } from "../Box";
+import { SpacerSpecificProps, spacerHandler } from "./handler";
+import { theme } from "@zakel-ui/sheet";
+import { defaultSpacerTag } from "./handler";
+import { forwardRef } from "../forwardRef";
+
+type SpacerProps = ComponentProps<"Spacer"> & SpacerSpecificProps;
+
+type SpacerComponent<T extends As = "div"> = ComponentWithAs<T, SpacerProps>;
+
+/**
+ * Spacer is a utility component used to create space between other components in a Zakel UI application.
+ * Accepts 'size' and 'horizontal' props, which specify the size of the space and its orientation, respectively.
+ *
+ * @see — Further documentation will be available in the future.
+ */
+const Spacer: SpacerComponent = forwardRef(
+  (
+    { as: Component = defaultSpacerTag, children, size, horizontal, ...props },
+    ref,
+  ) => {
+    props = {
+      ...spacerHandler({ size, horizontal }),
+      ...props,
+    };
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- FIXME
+    const variant = props.variant
+      ? theme.getVariants("Spacer")?.variants?.[props.variant]
+      : {};
+
+    return (
+      <Box
+        as={Component}
+        ref={ref}
+        {...variant}
+        {...props}
+        children={children}
+        IS_ZAKEL_DEFAULT
+      />
+    );
+  },
+);
+
+export { Spacer, type SpacerComponent, SpacerProps };

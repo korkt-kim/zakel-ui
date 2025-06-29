@@ -1,0 +1,44 @@
+import { StyledProps, PseudoProps } from "@zakel-ui/system";
+import React, { ReactNode } from "react";
+import {
+  As,
+  ComponentProps,
+  ComponentWithAs,
+  MergeWithAs,
+  PropsOf,
+} from "../types";
+import { Box } from "../Box";
+import { theme } from "@zakel-ui/sheet";
+import { defaultSelectTag } from "./handler";
+import { forwardRef } from "../forwardRef";
+
+type SelectProps = ComponentProps<"Select">;
+
+type SelectComponent<T extends As = "select"> = ComponentWithAs<T, SelectProps>;
+
+/**
+ * Select is a component that allows the user to select one option from a list.
+ *
+ * @see — http://zakel-ui.com/docs/Components/Select
+ */
+const Select: SelectComponent = forwardRef(
+  ({ as: Component = defaultSelectTag, children, ...props }, ref) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- FIXME
+    const variantStyle = props.variant
+      ? theme.getVariants("Select")?.variants?.[props.variant]
+      : {};
+
+    return (
+      <Box
+        as={Component}
+        ref={ref}
+        {...variantStyle}
+        {...props}
+        children={children}
+        IS_ZAKEL_DEFAULT
+      />
+    );
+  },
+);
+
+export { Select, type SelectComponent, SelectProps };
