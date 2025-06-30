@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 
-import { Heading } from './Heading';
+import { Heading } from '@zakel-ui/core';
 import { COMMON_ARG_TYPES } from '../consts';
 import type { HeadingComponent } from '@zakel-ui/core';
 

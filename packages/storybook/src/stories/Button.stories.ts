@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { Button } from './Button';
+import { Button } from '@zakel-ui/core';
 import type { ButtonProps } from '@zakel-ui/core';
 import type { ComponentPropsWithoutRef } from 'react';
 import { COMMON_ARG_TYPES } from '../consts';

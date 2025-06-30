@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Box } from './Box';
+import { Box } from '@zakel-ui/core';
 import type { BoxProps } from '@zakel-ui/core';
 import type { ComponentPropsWithoutRef } from 'react';
 import { COMMON_ARG_TYPES } from '../consts';

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 
-import { Text } from './Text';
+import { Text } from '@zakel-ui/core';
 import { COMMON_ARG_TYPES } from '../consts';
 import type { TextProps } from '@zakel-ui/core';
 
