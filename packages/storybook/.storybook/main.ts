@@ -22,11 +22,7 @@ const config: StorybookConfig = {
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-vitest")
   ],
-  async viteFinal(config) {
-    return mergeConfig(config, {
-      plugins: [KumaUI()],
-    });
-  },
+  
   framework: {
     name: "@storybook/react-vite",
     options: {

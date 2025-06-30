@@ -15,7 +15,6 @@ import { hasCoreImportDeclaration } from "./hasCoreImportDeclaration";
 export const styledFunctionsMap = new Map<string, Node[]>();
 
 export const visitor = ({ types: t, template }: Core) => {
-  console.log('visitor',t)
   // Keep track of the local name for the imported 'styled' function from '@zakel-ui/core'
   // This is necessary to handle cases where the 'styled' function is imported with a different name
   let importedStyleFunctions: Record<string, string> = {};
