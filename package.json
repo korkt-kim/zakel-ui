@@ -26,6 +26,7 @@
     "./README.md": "node scripts/sync-files.js"
   },
   "scripts": {
+    "storybook": "pnpm --filter storybook storybook ",
     "bootstrap": "pnpm install",
     "build": "turbo run build",
     "build:packages": "turbo run build --filter @zakel-ui/*",
