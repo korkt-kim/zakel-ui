@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Flex } from '@zakel-ui/core';
 import type { FlexProps } from '@zakel-ui/core';
 import { COMMON_ARG_TYPES } from '../consts';
-import { Box } from './Box';
+import { Box } from '@zakel-ui/core';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
