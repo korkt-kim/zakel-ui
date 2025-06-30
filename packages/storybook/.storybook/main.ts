@@ -1,6 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 import { mergeConfig } from "vite";
-import KumaUI from "@kuma-ui/vite";
+import KumaUI from "@zakel-ui/vite";
 import { join, dirname } from "path"
 
 /**
